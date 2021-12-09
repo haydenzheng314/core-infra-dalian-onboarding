@@ -1,1 +1,13 @@
-# core-infra-onboarding
+# Core-Infra Onboarding 
+
+## [Environment variable](01-Environment-Variable/env-variable.md)
+Configure JDK, ANT, Maven
+
+## [MySQL](02-MySQL/mysql.md)
+Install MySQL in Linux
+
+## [Git & GIt repo & GitHub CLI](03-Git/git.md)
+Configure Git and its related
+
+## [Import portal into Intellij](04-Import-Portal/portal.md)
+Setup for portal and ant all
