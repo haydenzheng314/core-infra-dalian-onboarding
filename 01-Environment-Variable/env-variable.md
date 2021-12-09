@@ -2,7 +2,9 @@
 
 Before any setup, press "Ctrl+Alt+T" to launch terminal, type:
 
-        sudo apt update
+```
+sudo apt update
+```
 
 To download and update the package information from all of the configured sources.
 
