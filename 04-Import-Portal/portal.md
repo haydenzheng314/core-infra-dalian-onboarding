@@ -80,8 +80,8 @@ nodejs.npm.sass.binary.site=
 
 **About:**
 
-1. You can change server type by uncommenting another one instead if the current one in app.server.your-name.properties
+1. You can change server type by uncommenting another one instead if the current one in app.server.username.properties
 
 2. When you run `ant all`, it fails for serveral times at beginning. Because Ant need to import files and actively triggers failure. It tells in terminal.
 
-    If it remains, uncomment the URL in build.your-name.properties
+    If it remains, uncomment the URL in build.username.properties
