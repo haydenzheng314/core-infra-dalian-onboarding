@@ -108,5 +108,5 @@ sudo apt-add-repository https://cli.github.com/packages
 Install GitHub CLI.
 
 ```
-    sudo apt install gh
+sudo apt install gh
 ```
