@@ -2,9 +2,9 @@
 
 1. Install mysql-apt.deb
     
-    1). In https://dev.mysql.com/downloads/repo/apt/ , click **Download**, start download with the first way.
+    In https://dev.mysql.com/downloads/repo/apt/ , click **Download**.
 
-    2). After it's done, in the new opening **mysql-apt-config** window, click **install**.
+    After downloading, in the new opening **mysql-apt-config** window, click **install**.
 
     >The downloaded .deb will override the default one in package managers. We recommand to use the downloaded one which is community editon.
 

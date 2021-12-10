@@ -1,83 +1,112 @@
-# Git :
+# 1. Git :
 
-1. Install Git on Xubuntu.
+## Install Git on Xubuntu.
 
-    Launch terminator.
+Launch terminator.
 
-        sudo apt update
-        sudo apt install git
-        sudo apt install gik git-gui
+```
+sudo apt update
+sudo apt install git
+sudo apt install gik git-gui
+```
 
-    After installation compeleted, you can verify it by typing: `git --version`
+After installation compeleted, you can verify it by typing: `git --version`
 
-2. Set up your name and email
+## Set up your name and email
 
-        git config --global user.name "your.name"  
-        git config --global user.email your.name@liferay.com
+In terminal, type:
 
-    This will change the values in `~/.gitconfig` or `~/.config/git/config`, which is specific to the current user. 
+```
+git config --global user.name "your.name"  
+git config --global user.email your.name@liferay.com
+```
 
-    >If you want it to be available for every user in your system, use --system instead of --global.  
-    >Or you only want it to be available for the current repository, use --local.
+This will change the values in `~/.gitconfig` or `~/.config/git/config`, which is specific to the current user. 
+
+>If you want it to be available for every user in your system, use --system instead of --global.  
+>Or you only want it to be available for the current repository, use --local.
 
 
-# Git repository: 
+# 2. Git repository: 
 
-A Git repository is a virtual storage of your project. Usually we put git repositories in /home/repo, launch terminal to create it and set its ownership.
+A Git repository is a virtual storage of your project.
 
-        sudo mkdir /home/repo
-        sudo chown name:name /home/repo
+Usually we put repositories in /home/repo
+
+In terminal, create it and set its ownership.
+
+```
+sudo mkdir /home/repo
+sudo chown name:name /home/repo
+```
 
 There are three copies of repositories (called repo for short) that concern you:
 
-1. In GitHub, open [liferay-portal](https://github.com/liferay/liferay-portal) repo. This is the remote parent repo called _upstream_.
+- In GitHub, open [liferay-portal](https://github.com/liferay/liferay-portal) repo. This is the remote parent repo called **upstream**.
 
-2. Click **Fork** at the top-right corner, select your own account. The page will jump to your-name/liferay-portal, which is your own remote repo called _origin_.
+- Click **Fork** at the top-right corner, select your own account. The page will jump to your-name/liferay-portal, which is your own remote repo called **origin**.
 
-3. After forking, you need to clone the repo to your laptop as a local repo. Usually we have two ways to clone:
+- After forking, you need to clone the repo to your computer as a local repo. 
 
-- Way 1: **REC**
+Usually we have two ways to clone a repo:
 
-    1). Launch terminal under /home/repo , create a directory named **liferay-portal**.
+Way 1: **REC**
 
-        mkdir liferay-portal
-        cd liferay-portal
+1. Create a directory named **liferay-portal** in /home/repo
 
-    2). Type `git init` to make the directory a repository.
+2. Launch terminal in /home/repo/liferay-portal . type to make the directory a repository.
+```
+    git init
+```
 
-    3). Copy liferay-portal repo from hard disk to /liferay-portal
+3. Copy liferay-portal repo from hard disk to /home/repo/liferay-portal
 
-    4). Type `git remote -v`, it shows origin and upstream connections with the URL of each one. The upstream points to liferay repo, keep it as is. The origin has to be changed to point to yours.
+4. Change the origin from others' to yours.
+    
+    In your forked repo on GitHub, click **code**, copy the SSH URL.
 
-    5). In your repo on GitHub, click **code**, copy the SSH URL. Head over to terminal, type:
+    Back to terminal, type:
+```
+    git remote set-url origin ${SSH URL}
+```
 
-        git remote set-url origin ${SSH URL}
 
-- Way 2: 
 
-    If the network is great, you can try this way with less steps.
+Way 2:
 
-    1). In your repo on GitHub, click **code**, copy the SSH URL.  
-    2). In file system, launch terminal under /home/repo, type:  
+1. In your forked repo on GitHub, click **code**, copy the SSH URL.  
+2. In file system, launch terminal in /home/repo, type:  
 
-        git clone {SSH URL}
+```
+    git clone {SSH URL}
+```
 
-    3). Repo cloned by this way only has origin, so add the upstream.
+3. Repo cloned by this way only has origin connections. To add the upstream, type:
 
-        cd /liferay-portal
-        git remote add upstream git@github.com:liferay-core-infra/liferay-portal.git
+```
+    cd liferay-portal
+    git remote add upstream git@github.com:liferay-core-infra/liferay-portal.git
+```
 
-Once you complete the clone, type `git status` in terminal under /liferay-portal to display the state of the working directory and the staging area.
+Once you complete the clone, here are two commands used to check:
 
-# GitHub CLI
+ `git status` displays the state of the working directory and the staging area.
 
-GitHub CLI is the official GitHub command line, install it by follows.
+ `git remote -v` displays origin and upstream connections with the URL of each one. 
 
-1. Add a reference to the package repository.
+# 3. GitHub CLI
 
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-        sudo apt-add-repository https://cli.github.com/packages
+GitHub CLI is the official GitHub command line.
 
-2. Install GitHub CLI
+Add a reference to the package repository.
 
-        sudo apt install gh
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+```
+
+Install GitHub CLI.
+
+```
+    sudo apt install gh
+```
