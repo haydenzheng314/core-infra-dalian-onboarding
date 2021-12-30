@@ -30,29 +30,28 @@ sudo chown username:username /opt
 
 `username` is the name of the user you use to log in to the operating system. When IT installs Xubuntu for you, they usually set the username `liferay`.
 
-Create three directories:
+Create directories:
 
 ```
 mkdir /opt/jdk
-mkdir -p /opt/tools/apache-ant
-mkdir -p /opt/tools/apache-maven
+mkdir /opt/tools
 ```
 
 ### JDK
 
-Get jdk1.8.0-181.tar.gz (version depends), in terminal, go to the directory where the tar.gz file is, and type:
+Get jdk1.8.0_181.tar.gz (version depends), in terminal, go to the directory where the tar.gz file is, and type:
 
 ```
-tar -xzvf jdk1.8.0-181.tar.gz
-mv jdk1.8.0-181 /opt/jdk/
+tar -xzvf jdk1.8.0_181.tar.gz
+mv jdk1.8.0_181 /opt/jdk
 ```
 
 to extract JDK and move it to `/opt/jdk`
 
-Then, type the following command to create a symbolic link pointing to the JDK directory。
+Then, type the following command to create a symbolic link pointing to the JDK directory.
 
 ```
-ln -s /opt/jdk/default /opt/jdk/jdk1.8.0_181
+ln -s /opt/jdk/jdk1.8.0_181 /opt/jdk/default
 ```
 
 > It's possible that you need to have multiple versions of JDK on your computer, and switch among them. With this way, you can just remove/recreate links to switch the system-wide JDK, without changing environment variables. We'll mention this later.
@@ -60,11 +59,11 @@ ln -s /opt/jdk/default /opt/jdk/jdk1.8.0_181
 
 ### Ant 
 
-Get apache-ant-1.10.11.tar.gz (version depends), extract it and move it to `/opt/tools/apache-ant`
+Get apache-ant-1.10.11.tar.gz (version depends), extract it and move it to `/opt/tools`
 
 ### Maven
 
-Get apache-maven-3.8.2.tar.gz (version depends), extract it and move it to `/opt/tools/apache-maven`
+Get apache-maven-3.8.2.tar.gz (version depends), extract it and move it to `/opt/tools`
 
 ## 2. Configure Environment variables
 
@@ -72,8 +71,8 @@ Copy (Ctrl+C) the environment variables below:
 
 ```
 JAVA_HOME=/opt/jdk/default
-ANT_HOME=/opt/tools/apache-ant
-MAVEN_HOME=/opt/tools/apache-maven
+ANT_HOME=/opt/tools/apache-ant-1.10.11
+MAVEN_HOME=/opt/tools/apache-maven-3.8.2
 
 ANT_OPTS="-Xmx4096m"
 
@@ -110,3 +109,13 @@ source ~/.profile
 ```
 
 > `source` will only take effect in the current terminal window. To apply the environment variable changes to the whole system, restart your computer.
+
+## 3. Verification
+
+Verify the configuration works with following commands:
+
+```
+java -version
+ant -version
+mvn --version
+```
