@@ -34,9 +34,13 @@ Mark the project directory as a source root:
 2. Choose /src/main/java , mark as **Sources**.
 
 
-# 3. Preparation for ant all
+# 3. Properties Preparation
 
-In /home/repo/liferay-portal, create a file named **app.server.username.properties**
+## 1. app.server.properties
+
+In /home/repo/liferay-portal, create a file named **app.server.username.properties** 
+
+Your `username` is usually set as `liferay`.
 
 Paste the properties below into it.
 
@@ -52,10 +56,16 @@ app.server.type=tomcat
 #app.server.type=websphere
 #app.server.type=wildfly
 
+##
 ## Server Directory
+##
 
 app.server.parent.dir=${project.dir}/../bundles/${app.server.type}
 ```
+
+>You can change server type by uncommenting another one instead of the current one.
+
+## 2. build.properties
 
 Create a file named **build.username.properties** in the same path.
 
@@ -78,10 +88,6 @@ nodejs.npm.sass.binary.site=
 #nodejs.npm.sass.binary.site=http://npm.taobao.org/mirrors/node-sass
 ```
 
-**About:**
-
-1. You can change server type by uncommenting another one instead if the current one in app.server.username.properties
-
-2. When you run `ant all`, it fails for serveral times at beginning. Because Ant need to import files and actively triggers failure. It tells in terminal.
-
-    If it remains, uncomment the URL in build.username.properties
+>When you run `ant all`, it fails for serveral times at beginning. Because Ant need to import files and actively triggers failure. It tells in terminal.
+>
+>If failure remains, uncomment the URL in build.username.properties
