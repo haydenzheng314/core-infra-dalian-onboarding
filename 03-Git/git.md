@@ -50,7 +50,7 @@ There are three copies of repositories (called repo for short) that concern you:
 
 - After forking, you need to clone the repo to your computer as a local repo. 
 
-Considering the size of repo and the network, we usually copy it directly from the USB disk to the computer instead of `git clone` command.
+Considering the size of repo and the network, we usually copy it directly from the USB disk to the computer instead of using `git clone` command.
 
 1. Copy liferay-portal.tar.gz to /home/repo , untar it.
 
