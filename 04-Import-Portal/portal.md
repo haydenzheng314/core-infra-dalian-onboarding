@@ -91,3 +91,16 @@ nodejs.npm.sass.binary.site=
 >When you run `ant all`, it fails for serveral times at beginning. Because Ant need to import files and actively triggers failure. It tells in terminal.
 >
 >If failure remains, uncomment the URL in build.username.properties
+
+## 4. Setup Intellij for developing Liferay Portal
+
+In /home/repo , clone the `liferay-intellij` repo:
+```
+git clone git@github.com:holatuwol/liferay-intellij.git
+```
+
+Before executing it, make sure you have run `ant all` for the project.
+
+Go to the root of liferay-portal repo, and run `../liferay-intellij/intellij` . This will create an IntelliJ project containing all modules, with all of them loaded at startup.
+
+Refers to: https://liferay.atlassian.net/wiki/spaces/PRDDXP/pages/1569556027/IntelliJ+for+Liferay+Development
