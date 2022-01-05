@@ -50,46 +50,19 @@ There are three copies of repositories (called repo for short) that concern you:
 
 - After forking, you need to clone the repo to your computer as a local repo. 
 
-Usually we have two ways to clone a repo:
+Considering the size of repo and the network, we usually copy it directly from the USB disk to the computer instead of `git clone` command.
 
-Way 1: **REC**
+1. Copy liferay-portal.tar.gz to /home/repo , untar it.
 
-1. In terminal, create the directory, make it a repository. 
+2. In your forked repo on GitHub, click **code**, copy the SSH URL.
+
+3. In terminal, change the origin from others' to yours:
 ```
-    mkdir /home/repo/liferay-portal
     cd /home/repo/liferay-portal
-    git init
-```
-
-2. Copy liferay-portal repo from hard disk to /home/repo/liferay-portal
-
-3. In your forked repo on GitHub, click **code**, copy the SSH URL.
-
-4. Back to terminal, change the origin from others' to yours by typing:
-```
     git remote set-url origin ${SSH URL}
 ```
 
-
-
-Way 2:
-
-1. In your forked repo on GitHub, click **code**, copy the SSH URL.  
-2. In terminal, type:  
-
-```
-    cd /home/repo
-    git clone {SSH URL}
-```
-
-3. Repo cloned by this way only has origin connections. To add the upstream, type:
-
-```
-    cd liferay-portal
-    git remote add upstream git@github.com:liferay-core-infra/liferay-portal.git
-```
-
-Once you complete the clone, here are two commands used to check:
+Once you complete, here are two commands used to check:
 
  `git status` displays the state of the working directory and the staging area.
 
