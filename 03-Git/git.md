@@ -25,14 +25,17 @@ This will change the values in `~/.gitconfig` or `~/.config/git/config`, which i
 >If you want it to be available for every user in your system, use --system instead of --global.  
 >Or you only want it to be available for the current repository, use --local.
 
+# 2. GitHub SSH Key
 
-# 2. Git repository: 
+Generate a new SSH key and add it to your GitHub account.
 
-A Git repository is a virtual storage of your project.
+Follow the first five steps in: https://docs.github.com/articles/generating-an-ssh-key/
 
-Usually we put repositories in /home/repo
+# 3. Git repository: 
 
-In terminal, create it and set its ownership.
+A Git repository is a virtual storage of your project. Usually we put it in /home/repo
+
+In terminal, create the directory and set its ownership.
 
 ```
 sudo mkdir /home/repo
@@ -51,20 +54,18 @@ Usually we have two ways to clone a repo:
 
 Way 1: **REC**
 
-1. Create a directory named **liferay-portal** in /home/repo
-
-2. Launch terminal in /home/repo/liferay-portal . type to make the directory a repository.
+1. In terminal, create the directory, make it a repository. 
 ```
+    mkdir /home/repo/liferay-portal
+    cd /home/repo/liferay-portal
     git init
 ```
 
-3. Copy liferay-portal repo from hard disk to /home/repo/liferay-portal
+2. Copy liferay-portal repo from hard disk to /home/repo/liferay-portal
 
-4. Change the origin from others' to yours.
-    
-    In your forked repo on GitHub, click **code**, copy the SSH URL.
+3. In your forked repo on GitHub, click **code**, copy the SSH URL.
 
-    Back to terminal, type:
+4. Back to terminal, change the origin from others' to yours by typing:
 ```
     git remote set-url origin ${SSH URL}
 ```
@@ -74,9 +75,10 @@ Way 1: **REC**
 Way 2:
 
 1. In your forked repo on GitHub, click **code**, copy the SSH URL.  
-2. In file system, launch terminal in /home/repo, type:  
+2. In terminal, type:  
 
 ```
+    cd /home/repo
     git clone {SSH URL}
 ```
 
@@ -93,7 +95,7 @@ Once you complete the clone, here are two commands used to check:
 
  `git remote -v` displays origin and upstream connections with the URL of each one. 
 
-# 3. GitHub CLI
+# 4. GitHub CLI
 
 GitHub CLI is the official GitHub command line.
 
