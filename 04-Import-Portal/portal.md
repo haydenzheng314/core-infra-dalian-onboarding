@@ -15,23 +15,27 @@ npm -v
 ```
 >Liferay portal has its own nodejs, and the installed one is only used for IntelliJ.
 
-
-# 2. Import portal into IntelliJ:
+# 2. Install Intellij Toolbox and IDEA
 
 Install JetBrains Toolbox. Download .tar.gz [here](https://www.jetbrains.com/toolbox-app/).
 
 Install IntelliJ IDEA in the toolbox. 
     
->There are Community Edition and Ultimate for your choice. If Ultimate, you need to create a ticket to request IntelliJ IDEA license in JIRA.
+>There are Community Edition and Ultimate for your choice. 
+>
+>If Ultimate, you need to create a ticket to request IntelliJ IDEA license in JIRA.
+>
+>Once you receive the email from JetBrains Sales, use JB account to activate IDEA Ultimate.
 
+# 3. Import portal into IntelliJ:
 
-Open liferay-portal under **project** in toolbox.
+Open IDEA in toolbox, click File -> Open , select /home/repo/liferay-portal , click OK.
 
 Mark the project directory as a source root:
 
 1. Click File -> Project Structure -> Modules
 
-2. Choose /src/main/java , mark as **Sources**.
+2. Choose /src/main/java , make sure it's marked as **Sources**.
 
 
 # 3. Properties Preparation
