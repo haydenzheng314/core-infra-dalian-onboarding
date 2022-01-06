@@ -52,14 +52,23 @@ There are three copies of repositories (called repo for short) that concern you:
 
 Considering the size of repo and the network, we usually copy it directly from the USB disk to the computer instead of using `git clone` command.
 
-1. Copy liferay-portal.tar.gz to /home/repo , untar it.
+1. Copy liferay-portal.tar to /home/repo . In terminal, untar it by typing:
+```
+    cd /home/repo
+    tar xvf liferay-portal.tar
+```
 
-2. In your forked repo on GitHub, click **code**, copy the SSH URL.
+2. Go to your forked repo on GitHub, click **code**, copy the SSH URL.
 
 3. In terminal, change the origin from others' to yours:
 ```
-    cd /home/repo/liferay-portal
+    cd liferay-portal
     git remote set-url origin ${SSH URL}
+```
+4. Make sure your local repo and origin repo up to date, type:
+```
+    git pull upstream master
+    git push origin master
 ```
 
 Once you complete, here are two commands used to check:
