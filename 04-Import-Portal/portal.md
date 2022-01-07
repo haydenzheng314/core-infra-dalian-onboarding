@@ -15,7 +15,7 @@ npm -v
 ```
 >Liferay portal has its own nodejs, and the installed one is only used for IntelliJ.
 
-# 2. Install Intellij Toolbox and IDEA
+# 2. Install IntelliJ Toolbox and IDEA
 
 Install JetBrains Toolbox. Download .tar.gz [here](https://www.jetbrains.com/toolbox-app/).
 
@@ -88,7 +88,7 @@ nodejs.npm.sass.binary.site=
 >
 >If failure remains, uncomment the URL in build.username.properties
 
-# 4. Setup Intellij for developing Liferay Portal
+# 4. Setup IntelliJ for developing Liferay Portal
 
 In /home/repo , clone the `liferay-intellij` repo:
 ```
@@ -101,4 +101,4 @@ After the successful build, run `../liferay-intellij/intellij`
 
 This will create an IntelliJ project containing all modules, with all of them loaded at startup.
 
-In Intellij IDEA, open liferay-portal project.
+In IntelliJ IDEA, open liferay-portal project.
