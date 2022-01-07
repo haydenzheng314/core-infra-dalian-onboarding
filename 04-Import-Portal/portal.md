@@ -27,18 +27,10 @@ Install IntelliJ IDEA in the toolbox.
 >
 >Once you receive the email from JetBrains Sales, use JB account to activate IDEA Ultimate.
 
-# 3. Import portal into IntelliJ:
-
-Open IDEA in toolbox, click File -> Open , select /home/repo/liferay-portal , click OK.
-
-Mark the project directory as a source root:
-
-1. Click File -> Project Structure -> Modules
-
-2. Choose /src/main/java , make sure it's marked as **Sources**.
-
 
 # 3. Properties Preparation
+
+Once you get and untar liferay-portal.tar, create two files:
 
 ## 1. app.server.properties
 
@@ -96,15 +88,17 @@ nodejs.npm.sass.binary.site=
 >
 >If failure remains, uncomment the URL in build.username.properties
 
-## 4. Setup Intellij for developing Liferay Portal
+# 4. Setup Intellij for developing Liferay Portal
 
 In /home/repo , clone the `liferay-intellij` repo:
 ```
 git clone git@github.com:holatuwol/liferay-intellij.git
 ```
 
-Before executing it, make sure you have run `ant all` for the project.
+Run `ant all` under /home/repo/liferay-portal .
 
-Go to the root of liferay-portal repo, and run `../liferay-intellij/intellij` . This will create an IntelliJ project containing all modules, with all of them loaded at startup.
+After the successful build, run `../liferay-intellij/intellij`
 
-Refers to: https://liferay.atlassian.net/wiki/spaces/PRDDXP/pages/1569556027/IntelliJ+for+Liferay+Development
+This will create an IntelliJ project containing all modules, with all of them loaded at startup.
+
+In Intellij IDEA, open liferay-portal project.
