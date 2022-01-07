@@ -6,7 +6,7 @@ Launch terminator.
 
 ```
 sudo apt install git
-sudo apt install gik git-gui
+sudo apt install gitk git-gui
 ```
 
 After installation compeleted, you can verify it by typing: `git --version`
