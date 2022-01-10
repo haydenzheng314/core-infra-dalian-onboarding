@@ -60,10 +60,10 @@ Considering the size of repo and the network, we usually copy it directly from t
 
 2. Go to your forked repo on GitHub, click **code**, copy the SSH URL.
 
-3. In terminal, change the origin from others' to yours:
+3. In terminal, add or change the origin connection:
 ```
     cd liferay-portal
-    git remote set-url origin ${SSH URL}
+    git remote add origin ${SSH URL} / git remote set-url origin ${SSH URL}
 ```
 4. Make sure your local repo and origin repo up to date, type:
 ```
